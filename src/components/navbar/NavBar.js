@@ -17,6 +17,7 @@ function NavBar() {
       </Nav.Item>
     </Nav>
     </div>
+
   );
 }
 
