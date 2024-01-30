@@ -2,21 +2,26 @@
     background-color: black;
     /* display: flex;
     position: absolute;
+    width: 100%; */
+    /* justify-content: space-around; */
+    /* position: fixed;
     width: 100%;
-    justify-content: space-around; */
-    position: fixed;
-    width: 100%;
-    padding: 30px 0;
+    padding: 30px 0; */
     font-family: "Ubuntu", sans-serif;
     transition: all 0.3s ease;
-    padding: 15px 0;
-    display: flex;
+    /* padding: 15px 0; */
+    /* display: flex;
     align-items: center;
-    direction: rtl;
+    direction: rtl; */
 }
 .nav a{
     color: white;
     text-decoration: none;
     display:flex;
-    padding: 15px;
+    padding: 47px;
+}
+.logo{
+    height:120px;
+    width:120px;
+    margin-right: 625px;
 }
