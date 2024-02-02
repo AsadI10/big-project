@@ -1,18 +1,16 @@
 .nav{
     background-color: black;
-    /* display: flex;
-    position: absolute;
-    width: 100%; */
     /* justify-content: space-around; */
     /* position: fixed;
     width: 100%;
     padding: 30px 0; */
-    font-family: "Ubuntu", sans-serif;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: Lucida Console;
+    font-size: 15px;
     transition: all 0.3s ease;
-    /* padding: 15px 0; */
     /* display: flex;
-    align-items: center;
-    direction: rtl; */
+    align-items: center; */
+    /* direction: left; */
 }
 .nav a{
     color: white;
@@ -23,5 +21,15 @@
 .logo{
     height:127px;
     width:127px;
-    margin-right: 625px;
+    margin-right: 565px;
+    border-radius: 50%;
+}
+.icon-style {
+    color: white; /* Change the icon color */
+    font-size: 48px;
+    margin-top: 32px;
+  }
+.icon-style:hover{
+    color: blue;
+    cursor: pointer;
 }
