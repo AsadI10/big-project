@@ -1,11 +1,15 @@
 import React from 'react';
 import "./NavBar.css";
+import { useState } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import logo from '../../assets/images/logo.jpg'
 import { IoAccessibility } from "react-icons/io5";
+import AccessibilityModal from '../AccessibilityModal/AccessibilityModal';
 
 
 function NavBar() {
+  const [modalShow, setModalShow] = useState(false);
+
   return (
     <div className='nav'>
     <Nav variant="tabs" defaultActiveKey="/home">
@@ -20,9 +24,10 @@ function NavBar() {
         <Nav.Link eventKey="link-2">Plan your Visit</Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <IoAccessibility className="icon-style" />
+        <IoAccessibility className="icon-style" onClick={() => setModalShow(true)} />
       </Nav.Item>
     </Nav>
+    <AccessibilityModal show={modalShow} onHide={() => setModalShow(false)} />
     </div>
 
   );
