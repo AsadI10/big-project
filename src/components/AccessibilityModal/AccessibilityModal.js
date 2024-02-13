@@ -6,7 +6,7 @@ const AccessibilityModal = ({ show, onHide }) => {
   return (
     <Modal show={show} onHide={onHide} centered>
       <Modal.Header closeButton>
-        <Modal.Title>Accessibility Adjustments</Modal.Title>
+        <Modal.Title className='modal-title-custom'>Accessibility Adjustments</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         {/* The body of the modal with accessibility options */}
