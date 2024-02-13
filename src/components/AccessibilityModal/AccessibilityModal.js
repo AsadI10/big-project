@@ -1,4 +1,3 @@
-// AccessibilityModal.js
 import React from 'react';
 import Modal from 'react-bootstrap/Modal'; //using react-bootstrap for modal functionality
 import './AccessibilityModal.css';
