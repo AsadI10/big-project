@@ -17,9 +17,9 @@ const ContactForm = () => {
 
 const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically send the form data to a server or email service
+    // tHIS is to send the form data to a server or email service
     console.log(formData);
-    // Optionally clear the form
+    //This is to  opptionally clear the form
     setFormData({ name: '', email: '', message: '' });
   };
 
