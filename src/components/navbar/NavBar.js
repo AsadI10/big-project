@@ -6,7 +6,6 @@ import logo from '../../assets/images/logo.jpg'
 import { IoAccessibility } from "react-icons/io5";
 import AccessibilityModal from '../AccessibilityModal/AccessibilityModal';
 
-
 function NavBar() {
   const [modalShow, setModalShow] = useState(false);
 
