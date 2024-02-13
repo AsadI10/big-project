@@ -13,17 +13,17 @@
   color: blue !important;
 }
 .button-square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 150px;
   height: 150px;
-  padding: 0;
   border: 1px solid #000; 
   background-color: #d7d7d7;
   color: #000;
-  font-size: 15px;
-  line-height: 150px;
-  text-align: center;
-  overflow: hidden;
-  white-space: nowrap; 
-  vertical-align: middle; 
+  font-size: 25px;
   border-radius: 0;
+  cursor: pointer;
+  overflow: hidden;
+  text-transform: uppercase;
 }
