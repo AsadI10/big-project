@@ -12,15 +12,29 @@
   font-size: 24px;
   color: blue !important;
 }
-.button-square {
+/* css for the components */
+[data-theme='dark'] {
+  --background: #000;
+  --text-primary: #ffffff;
+}
+.theme-Toggle{
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+.theme-Toggle i {
+  /* cursor: pointer; */
+  font-size: 2rem;
+  transition: all 0.5s;
+}
+.theme-Toggle{
   display: flex;
   justify-content: center;
   align-items: center;
   width: 150px;
   height: 150px;
   border: 1px solid #000; 
-  background-color: #d7d7d7;
-  color: #000;
+  /* background-color: #d7d7d7;
+  color: #000; */
   font-size: 25px;
   border-radius: 0;
   cursor: pointer;
