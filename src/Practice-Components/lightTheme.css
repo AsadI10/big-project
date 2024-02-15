@@ -1,0 +1,13 @@
+[data-theme='dark'] {
+    --background: #000;
+    --text-primary: #ff8686;
+}
+.theme-Toggle{
+    background-color: var(--background);
+    color: var(--text-primary);
+}
+.theme-Toggle i {
+    /* cursor: pointer; */
+    font-size: 2rem;
+    transition: all 0.5s;
+}
