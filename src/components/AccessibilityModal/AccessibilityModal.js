@@ -23,7 +23,7 @@ const AccessibilityModal = ({ show, onHide }) => {
         </button> */}
     <div className='theme-Toggle' data-theme={theme} >
         {/* <button>Light Theme</button> */}
-        <i onClick={switchTheme} className='fas fa-toggle-on'>Light Theme</i>
+        <i onClick={switchTheme} className='fas fa-toggle-on'>Dark Theme</i>
     </div>
       </Modal.Body>
     </Modal>
