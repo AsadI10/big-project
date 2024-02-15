@@ -2,6 +2,10 @@ import React from 'react';
 import './body.css';
 import Dinasour from '../../assets/images/Dinasour.jpg';
 import ThomasTank from '../../assets/images/ThomasTank.jpg';
+import Zoo from '../../assets/images/zoo.jpg';
+import ShortStay from '../../assets/images/ShortStay.jpg';
+import AnnualPass from '../../assets/images/AnnualPass.jpg';
+import MiniGolf from '../../assets/images/MiniGolf.jpg';
 
 const attractions = [
     {
@@ -16,28 +20,23 @@ const attractions = [
     },
     {
       name: "ZOO ONLY DAYS",
-      image: "/images/zoo.jpg", // Replace with actual image path
+      image: Zoo,
       alt: "Zoo Animals"
     },
     {
       name: "SHORT BREAKS",
-      image: "/images/short-breaks.jpg", // Replace with actual image path
+      image: ShortStay,
       alt: "Family enjoying a short break"
     },
     {
       name: "ANNUAL PASS",
-      image: "/images/annual-pass.jpg", // Replace with actual image path
+      image: AnnualPass,
       alt: "People holding an annual pass"
     },
     {
       name: "ADVENTURE GOLF",
-      image: "/images/adventure-golf.jpg", // Replace with actual image path
+      image: MiniGolf,
       alt: "Mini Golf Course"
-    },
-    {
-      name: "WATER PARK",
-      image: "/images/water-park.jpg", // Replace with actual image path
-      alt: "Water Slides"
     },
 ];
   
