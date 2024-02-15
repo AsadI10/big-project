@@ -1,0 +1,49 @@
+.body-container {
+    text-align: center;
+    padding: 20px;
+}
+  
+.body-container h2 {
+    color: #FFA500;
+    margin-bottom: 16px;
+}
+  
+.body-container p {
+    color: #333; 
+    margin-bottom: 32px;
+}
+  
+.attractions-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+  
+.attraction-card {
+    width: 300px; /* Adjust width as necessary */
+    margin: 10px;
+    text-align: center;
+}
+  
+.attraction-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+  
+.attraction-card button {
+    background-color: #FFA500;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.attraction-card img {
+    width: 300px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
