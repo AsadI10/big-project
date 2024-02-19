@@ -1,6 +1,6 @@
 // import { useContext } from 'react';
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal'; //using react-bootstrap for modal functionality
 import './AccessibilityModal.css';
 // import { ThemeContext } from '../contexts/ThemeContext.js'
@@ -8,13 +8,19 @@ import useLocalStorage from 'use-local-storage';
 
 const AccessibilityModal = ({ show, onHide }) => {
 // const { isDarkThemeEnabled, toggleDarkTheme } = useContext(ThemeContext);
-const [theme, setTheme] = useLocalStorage('theme' ? 'dark' : 'light')
+const [theme, setTheme] = useLocalStorage('theme', 'light'); // Set a default value for theme
 
 // Define the available background colors
 const backgroundColors = ['#FFFFFF', '#0000FF', '#800080', '#FF0000', '#00FF00', '#FFFF00', '#000000'];
 
      // State to hold the selected background color
 const [backgroundColor, setBackgroundColor] = useState('#FFFFFF');
+
+useEffect(() => {
+  // Apply the theme when the component mounts
+  document.body.classList.toggle('dark-theme', theme === 'dark');
+}, [theme]); // Depend on theme to re-run the effect
+
 const switchTheme = () => {
       const newTheme = theme === 'light' ? 'dark' : 'light';
       setTheme(newTheme);
@@ -37,7 +43,7 @@ return (
         </button> */}
 <div className='theme-Toggle' data-theme={theme} >
         {/* <button>Light Theme</button> */}
-        <i onClick={switchTheme} className='fas fa-toggle-on'>Dark Theme</i>
+        <i onClick={switchTheme} className='fas fa-toggle-on'>Dark Contrast</i>
     </div>
      {/* Color selection */}
      <div className="color-selector-container">
