@@ -4,40 +4,87 @@
   margin-bottom: 0 !important;
   margin-right: 0 !important; 
 }
-  
 .modal-content {
   width: 100% !important;
+}
+/* Dark theme styles */
+.dark-theme {
+  background-color: #333;
+  color: rgb(0, 0, 0);
+  /* other styles for dark theme */
 }
 .modal-title-custom {
   font-size: 24px;
   color: blue !important;
 }
 /* css for the components */
-[data-theme='dark'] {
+/* [data-theme='dark'] {
   --background: #000;
   --text-primary: #ffffff;
 }
 .theme-Toggle{
   background-color: var(--background);
   color: var(--text-primary);
-}
+} */
 .theme-Toggle i {
   /* cursor: pointer; */
   font-size: 2rem;
   transition: all 0.5s;
+  font-size: 15px;
 }
 .theme-Toggle{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   border: 1px solid #000; 
+  border-radius: 50%;
   /* background-color: #d7d7d7;
   color: #000; */
-  font-size: 25px;
   border-radius: 0;
   cursor: pointer;
   overflow: hidden;
-  text-transform: uppercase;
+}
+/*Background Color css */
+.color-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.color-options {
+  display: flex;
+  margin-bottom: 1rem;
+}
+.color-selector-container {
+  padding: 10px;
+  background-color: #f2f2f2; /* Example background color */
+  border-radius: 5px; /* Rounded corners */
+}
+/* this is to make it smaller */
+.color-option-button {
+  width: 17px; /* Reduced size */
+  height: 17px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  margin: 2px;
+}
+/* If you want to reduce the text size in the color-selector-container */
+.color-selector-container p {
+  font-size: 0.8rem; /* Smaller font size for the text */
+  margin-bottom: 15px; /* Reduced bottom margin */
+}
+/* Adjusting the color-selector-container padding for a smaller box */
+.color-selector-container {
+  padding: 5px; /* Reduced padding */
+  display: inline-block; /* This will shrink the container to fit its content */
+  background-color: #f2f2f2; /* Example background color */
+  /* border-radius: 5px;
+  margin-right: 10px; */
+}
+.color-selector-container{
+  position: absolute;
+  margin-top: -120px;
+  margin-left: 170px;
 }
