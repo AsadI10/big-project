@@ -1,31 +1,29 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useContext } from 'react';
 
-export const ThemeContext = createContext({
-  isDarkThemeEnabled: false,
-  toggleDarkTheme: () => {},
-});
+// Create a context for the theme
+const ThemeContext = createContext();
 
 // Create a provider component
 export const ThemeProvider = ({ children }) => {
-  const [isDarkThemeEnabled, setIsDarkThemeEnabled] = useState(false);
+  const [theme, setTheme] = useState('light'); // Default theme is light
 
-  // Check for a saved theme preference in localStorage when the component mounts
-  useEffect(() => {
-    const storedThemePreference = localStorage.getItem('darkTheme') === 'true';
-    setIsDarkThemeEnabled(storedThemePreference);
-  }, []);
-
-  // Function to toggle the theme
-  const toggleDarkTheme = () => {
-    const newThemePreference = !isDarkThemeEnabled;
-    setIsDarkThemeEnabled(newThemePreference);
-    localStorage.setItem('darkTheme', newThemePreference);
+  // Toggle theme function
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
-  // The value passed to the provider includes the theme state and the toggle function
+  // The context value that will be supplied to any descendants of this provider
+  const contextValue = {
+    theme,
+    toggleTheme
+  };
+
   return (
-    <ThemeContext.Provider value={{ isDarkThemeEnabled, toggleDarkTheme }}>
+    <ThemeContext.Provider value={contextValue}>
       {children}
     </ThemeContext.Provider>
   );
 };
+
+// Custom hook to use the theme context
+export const useTheme = () => useContext(ThemeContext);
