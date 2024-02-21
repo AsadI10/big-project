@@ -28,9 +28,8 @@
 } */
 .theme-Toggle i {
   /* cursor: pointer; */
-  font-size: 2rem;
   transition: all 0.5s;
-  font-size: 15px;
+  font-size: 0.8rem
 }
 .theme-Toggle{
   display: flex;
@@ -106,4 +105,32 @@
   align-items: center;
   text-transform: uppercase;
   margin-top: 20px;
+  font-size: 0.8rem
+}
+/*Adjust Text Colours*/
+.text-color-selector-container {
+  border-radius: 5px;
+  padding: 5px; /* Reduced padding */
+  display: inline-block; /* This will shrink the container to fit its content */
+  background-color:  #f2f2f2;; /* Example background color */
+  border: 1px solid #000;
+  font-size: 0.8rem;
+}
+.text-color-options {
+  display: flex;
+  justify-content: center; /* Center the color buttons */
+  margin-bottom: 1rem;
+}
+.color-options-button {
+  margin: 0 5px; /* Space out the color buttons */
+}
+.text-color-selector-container{
+  position: absolute;
+  margin-top: -122px;
+  margin-left: 170px;
+}
+.adjust-color{
+  height: 30px;
+  width: 63px;
+  font-size: medium;
 }
