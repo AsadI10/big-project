@@ -6,9 +6,24 @@ import './AccessibilityModal.css';
 // import { ThemeContext } from '../contexts/ThemeContext.js'
 import useLocalStorage from 'use-local-storage';
 
+//This is for the text-to-speech API
+const speakText = (text) => {
+  if ('speechSynthesis' in window) {
+    const synth = window.speechSynthesis;
+    const utterance = new SpeechSynthesisUtterance(text);
+    synth.speak(utterance);
+  } else {
+    // Handle the error case here
+    console.error("Speech synthesis not supported in this browser.");
+  }
+};
+
 const AccessibilityModal = ({ show, onHide }) => {
 // const { isDarkThemeEnabled, toggleDarkTheme } = useContext(ThemeContext);
 const [theme, setTheme] = useLocalStorage('theme', 'light'); // Set a default value for theme
+
+//TextToSpeech
+const [inputText, setInputText] = useState('');
 
 // low saturation code
 const [isLowSaturation, setIsLowSaturation] = useState(false);
@@ -117,8 +132,20 @@ return (
         aria-label={`Change text color to ${color}`}
       />
     ))}
-  </div>
+</div>
   <button className='adjust-color' onClick={onHide}>Cancel</button>
+</div>
+<div className="text-to-speech-container">
+    <input
+      type="text"
+      value={inputText}
+      onChange={(e) => setInputText(e.target.value)}
+      placeholder="Enter text to read aloud"
+      className="text-to-speech-input"
+    />
+    <button onClick={() => speakText(inputText)} className="text-to-speech-button">
+      Speak
+    </button>
 </div>
       </Modal.Body>
     </Modal>
