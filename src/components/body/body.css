@@ -2,35 +2,29 @@
     text-align: center;
     padding: 20px;
 }
-  
 .body-container h2 {
     color: #FFA500;
     margin-bottom: 16px;
 }
-  
 .body-container p {
     color: #333; 
     margin-bottom: 32px;
 }
-  
 .attractions-container {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
-  
 .attraction-card {
     width: 300px;
     margin: 10px;
     text-align: center;
-}
-  
+} 
 .attraction-card img {
     width: 100%;
     height: auto;
     border-radius: 8px;
 }
-  
 .attraction-card button {
     background-color: #FFA500;
     color: white;
