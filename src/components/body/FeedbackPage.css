@@ -1,0 +1,66 @@
+/* Testimonials.css */
+
+.testimonials-container {
+    text-align: center;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif; /* Use the font that matches your design */
+    border-top: 3px solid #333
+  }
+  
+  .testimonials-container h2 {
+    color: #333; /* Title color */
+    margin-bottom: 40px; /* Space below the title */
+  }
+  
+  .testimonials-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px; /* Adjust the space between elements */
+  }
+  
+  .testimonial {
+    background-color: #333; /* Background color for the testimonial card */
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for the card */
+    width: 300px; /* Width of the testimonial card */
+    min-height: 200px; /* Minimum height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative; /* For positioning the rating stars */
+  }
+  
+  .testimonial .rating {
+    position: absolute;
+    top: 10px; /* Space from the top edge */
+    left: 10px; /* Space from the left edge */
+    color: #FFD700; /* Color for the rating stars */
+  }
+  
+  .quote {
+    font-size: 1.1rem; /* Font size for the quote */
+    font-style: italic;
+  }
+  
+  .author {
+    font-size: 0.9rem; /* Font size for the author's details */
+    margin-top: 20px;
+    text-align: left; /* Align author text to left */
+  }
+  
+  .navigation-button {
+    background: none;
+    border: none;
+    color: #333; /* Color of the arrows */
+    cursor: pointer;
+    font-size: 2rem; /* Size of the arrows */
+  }
+  
+  .navigation-button:disabled {
+    color: #ccc; /* Color when navigation is disabled */
+  }
+  
+  /* Add additional responsive styling as needed */
+  
