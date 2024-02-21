@@ -6,6 +6,9 @@
   max-height: calc(100vh - 100px) !important; 
   overflow-y: auto !important; /* Enable vertical scrolling */
 }
+.body-scroll {
+  overflow: visible !important;
+}
 .modal-content {
   width: 100% !important;
 }

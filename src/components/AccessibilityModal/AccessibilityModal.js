@@ -19,6 +19,21 @@ const speakText = (text) => {
 };
 
 const AccessibilityModal = ({ show, onHide }) => {
+// Add or remove the 'body-scroll' class based on the 'show' prop//
+//This is for the page to able to scroll and allow when component is open to scroll.
+useEffect(() => {
+  if (show) {
+    document.body.classList.add('body-scroll');
+  } else {
+    document.body.classList.remove('body-scroll');
+  }
+
+  // Cleanup function to remove the class when the component unmounts
+  return () => {
+    document.body.classList.remove('body-scroll');
+  };
+}, [show]);
+
 // const { isDarkThemeEnabled, toggleDarkTheme } = useContext(ThemeContext);
 const [theme, setTheme] = useLocalStorage('theme', 'light'); // Set a default value for theme
 
@@ -78,8 +93,8 @@ return (
   <Modal 
   show={show} 
   onHide={onHide} 
-  centered 
-  backdrop={false} // This allows interaction with the page behind the modal
+  centered
+  backdrop={false}
 >
 {/* <Modal show={show} onHide={onHide} centered> Thius is centered*/} 
   <Modal.Header closeButton>
