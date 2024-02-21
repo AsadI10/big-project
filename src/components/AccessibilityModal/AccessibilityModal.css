@@ -1,8 +1,10 @@
 .modal-dialog {
-  margin-top: 0 !important; /* I've used !important as a last resort this is due to bootstrap*/
+  margin-top: 30px !important; /* I've used !important as a last resort this is due to bootstrap*/
   margin-left: auto !important;
   margin-bottom: 0 !important;
-  margin-right: 0 !important; 
+  margin-right: 0 !important;
+  max-height: calc(100vh - 100px) !important; 
+  overflow-y: auto !important; /* Enable vertical scrolling */
 }
 .modal-content {
   width: 100% !important;
@@ -58,7 +60,7 @@
 }
 .color-selector-container {
   padding: 10px;
-  background-color: #f2f2f2; /* Example background color */
+  background-color: #f2f2f2;
   border-radius: 5px; /* Rounded corners */
 }
 /* this is to make it smaller */
@@ -79,7 +81,7 @@
 .color-selector-container {
   padding: 5px; /* Reduced padding */
   display: inline-block; /* This will shrink the container to fit its content */
-  background-color:  #f2f2f2;; /* Example background color */
+  background-color:  #f2f2f2;
   /* border-radius: 5px;
   margin-right: 10px; */
   border: 1px solid #000; 
@@ -112,7 +114,7 @@
   border-radius: 5px;
   padding: 5px; /* Reduced padding */
   display: inline-block; /* This will shrink the container to fit its content */
-  background-color:  #f2f2f2;; /* Example background color */
+  background-color:  #f2f2f2;
   border: 1px solid #000;
   font-size: 0.8rem;
 }
@@ -133,4 +135,26 @@
   height: 30px;
   width: 63px;
   font-size: medium;
+}
+/* Styles for the text-to-speech feature */
+.text-to-speech-container {
+  border: 1px solid #000;
+  padding: 20px;
+  width: 120px; 
+  height: 120px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 18px auto; /* Center the box */
+  margin-right: 540px;
+  cursor: pointer;
+  background-color:  #f2f2f2;
+}
+.text-to-speech-input {
+  margin-bottom: 10px; /* Space between input and button */
+  width: 100%; /* Input width to fill the container */
+}
+.text-to-speech-button {
+  width: 100%; /* Button width to fill the container */
 }

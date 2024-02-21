@@ -75,7 +75,13 @@ const changeBackgroundColor = (color) => {
 };
 
 return (
-<Modal show={show} onHide={onHide} centered>
+  <Modal 
+  show={show} 
+  onHide={onHide} 
+  centered 
+  backdrop={false} // This allows interaction with the page behind the modal
+>
+{/* <Modal show={show} onHide={onHide} centered> Thius is centered*/} 
   <Modal.Header closeButton>
     <Modal.Title className='modal-title-custom'>Accessibility Adjustments</Modal.Title>
     </Modal.Header>
