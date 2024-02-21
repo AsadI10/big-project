@@ -10,6 +10,22 @@ const AccessibilityModal = ({ show, onHide }) => {
 // const { isDarkThemeEnabled, toggleDarkTheme } = useContext(ThemeContext);
 const [theme, setTheme] = useLocalStorage('theme', 'light'); // Set a default value for theme
 
+// low saturation code
+const [isLowSaturation, setIsLowSaturation] = useState(false);
+const toggleLowSaturation = () => {
+  const shouldBeLowSaturation = !isLowSaturation;
+  setIsLowSaturation(shouldBeLowSaturation);
+  document.body.classList.toggle('low-saturation', shouldBeLowSaturation);
+};
+
+useEffect(() => {
+  // The cleanup function runs when the `isLowSaturation` state changes
+  // or when the component is unmounted.
+  return () => {
+    document.body.classList.remove('low-saturation');
+  };
+}, [isLowSaturation]);
+
 // Define the available background colors
 const backgroundColors = ['#FFFFFF', '#0000FF', '#800080', '#FF0000', '#00FF00', '#FFFF00', '#000000'];
 
@@ -68,6 +84,9 @@ return (
           </div>
           <button onClick={() => onHide()}>Cancel</button>
         </div>
+      <button onClick={toggleLowSaturation} className="square-button">
+          {isLowSaturation ? 'Normal Saturation' : 'Low Saturation'}
+      </button>
       </Modal.Body>
     </Modal>
   );

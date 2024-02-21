@@ -45,6 +45,7 @@
   border-radius: 0;
   cursor: pointer;
   overflow: hidden;
+  background-color: #f2f2f2;
 }
 /*Background Color css */
 .color-selector {
@@ -79,12 +80,30 @@
 .color-selector-container {
   padding: 5px; /* Reduced padding */
   display: inline-block; /* This will shrink the container to fit its content */
-  background-color: #f2f2f2; /* Example background color */
+  background-color:  #f2f2f2;; /* Example background color */
   /* border-radius: 5px;
   margin-right: 10px; */
+  border: 1px solid #000; 
 }
 .color-selector-container{
   position: absolute;
   margin-top: -120px;
   margin-left: 170px;
+}
+/*Low saturation */
+.low-saturation {
+  filter: saturate(0.5);
+}
+.square-button {
+  width: 120px; 
+  height: 120px;
+  background-color:#f2f2f2;
+  border: 1px solid #000; 
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  margin-top: 20px;
 }
