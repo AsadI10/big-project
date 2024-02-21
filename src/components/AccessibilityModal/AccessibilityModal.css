@@ -165,3 +165,37 @@
 .text-to-speech-button {
   width: 100%; /* Button width to fill the container */
 }
+/*CSS for the narrator*/
+.narration-container {
+  border-radius: 5px;
+  padding: 5px;
+  display: inline-block; 
+  background-color:  #f2f2f2;
+  border: 1px solid #000;
+  font-size: 0.8rem;
+  gap: 2px;
+  position: absolute;
+  margin-top: -138px;
+  margin-left: 170px;
+  width: 292px;
+  height: 120px;
+}
+.narration-title {
+  text-align: center;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+.narration-controls {
+  width: 100%;
+  display: flex; 
+  justify-content: space-around; 
+}
+.narration-button {
+  padding: 8px 16px;
+  border: none; 
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}

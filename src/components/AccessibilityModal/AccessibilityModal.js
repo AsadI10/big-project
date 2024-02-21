@@ -19,6 +19,28 @@ const speakText = (text) => {
 };
 
 const AccessibilityModal = ({ show, onHide }) => {
+
+  //This is code for the narrator
+  const [synth] = useState(window.speechSynthesis);
+  const [utterance] = useState(new SpeechSynthesisUtterance()); 
+  const getAllText = () => {
+  const bodyText = document.body.innerText; // or document.querySelector('.your-container').innerText;
+  return bodyText;
+};
+
+const startNarration = () => {
+  utterance.text = getAllText();
+  synth.speak(utterance);
+};
+
+const pauseNarration = () => {
+  synth.pause();
+};
+  
+const stopNarration = () => {
+  synth.cancel();
+};
+
 // Add or remove the 'body-scroll' class based on the 'show' prop//
 //This is for the page to able to scroll and allow when component is open to scroll.
 useEffect(() => {
@@ -48,7 +70,7 @@ const toggleLowSaturation = () => {
   document.body.classList.toggle('low-saturation', shouldBeLowSaturation);
 };
 useEffect(() => {
-  // The cleanup function runs when the `isLowSaturation` state changes
+  // The cleanup is the function that runs when the `isLowSaturation` state changes
   // or when the component is unmounted.
   return () => {
     document.body.classList.remove('low-saturation');
@@ -97,13 +119,13 @@ return (
   backdrop={false}
 >
 {/* <Modal show={show} onHide={onHide} centered> Thius is centered*/} 
-  <Modal.Header closeButton>
-    <Modal.Title className='modal-title-custom'>Accessibility Adjustments</Modal.Title>
-    </Modal.Header>
-    <Modal.Body>
-      {/* <button className='button-square' onClick={toggleDarkTheme}>
-          {isDarkThemeEnabled ? 'Disable Dark Theme' : 'Enable Dark Theme'}
-        </button> */}
+<Modal.Header closeButton>
+  <Modal.Title className='modal-title-custom'>Accessibility Adjustments</Modal.Title>
+  </Modal.Header>
+   <Modal.Body>
+    {/* <button className='button-square' onClick={toggleDarkTheme}>
+    {isDarkThemeEnabled ? 'Disable Dark Theme' : 'Enable Dark Theme'}
+    </button> */}
 <div className='theme-Toggle' data-theme={theme} >
         {/* <button>Light Theme</button> */}
         <i onClick={switchTheme} className='fas fa-toggle-on'>Dark Contrast</i>
@@ -167,6 +189,14 @@ return (
     <button onClick={() => speakText(inputText)} className="text-to-speech-button">
       Speak
     </button>
+</div>
+<div className="narration-container">
+  <p className="narration-title">Narration Controls</p>
+  <div className="narration-controls">
+    <button className="narration-button" onClick={startNarration}>Start</button>
+    <button className="narration-button" onClick={pauseNarration}>Pause</button>
+    <button className="narration-button" onClick={stopNarration}>Stop</button>
+  </div>
 </div>
       </Modal.Body>
     </Modal>
