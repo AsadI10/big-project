@@ -11,6 +11,7 @@
 }
 .modal-content {
   width: 100% !important;
+  background-color: #7fceff !important;
 }
 /* Dark theme styles */
 .dark-theme {
@@ -20,7 +21,10 @@
 }
 .modal-title-custom {
   font-size: 24px;
-  color: blue !important;
+  color: #000000 !important;
+  margin-left: auto !important;
+  margin-bottom: 0 !important;
+  margin-right: 0 !important;
 }
 /* css for the components */
 /* [data-theme='dark'] {
