@@ -20,6 +20,25 @@ const speakText = (text) => {
 
 const AccessibilityModal = ({ show, onHide }) => {
 
+  // function for magnifier
+  const [isTextMagnified, setIsTextMagnified] = useState(false);
+
+  // Function to toggle magnification on and off
+  const toggleTextMagnification = () => {
+    setIsTextMagnified(!isTextMagnified);
+  };
+
+  useEffect(() => {
+    const textElements = document.querySelectorAll('.modal-body *');
+    textElements.forEach(element => {
+      if (isTextMagnified) {
+        element.classList.add('text-magnified', 'magnify'); // Add classes to magnify text
+      } else {
+        element.classList.remove('text-magnified', 'magnify'); // Remove classes to return to normal
+      }
+    });
+  }, [isTextMagnified]);
+
   //This is code for the narrator
   const [synth] = useState(window.speechSynthesis);
   const [utterance] = useState(new SpeechSynthesisUtterance()); 
@@ -197,6 +216,11 @@ return (
     <button className="narration-button" onClick={pauseNarration}>Pause</button>
     <button className="narration-button" onClick={stopNarration}>Stop</button>
   </div>
+</div>
+<div className="text-magnification-container">
+  <button onClick={toggleTextMagnification} className="text-magnification-button">
+    {isTextMagnified ? 'Turn Off Magnification' : 'Turn On Magnification'}
+  </button>
 </div>
       </Modal.Body>
     </Modal>
