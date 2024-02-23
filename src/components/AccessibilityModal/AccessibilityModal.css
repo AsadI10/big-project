@@ -182,7 +182,7 @@
   height: 120px;
 }
 .narration-title {
-  text-align: center;
+  /* text-align: center; */
   font-size: 0.8rem;
   margin-bottom: 8px;
 }
@@ -223,4 +223,21 @@
   margin-right: 540px;
   cursor: pointer;
   background-color:  #f2f2f2;
+}
+/*Title colours*/ 
+.title-color-selector-container{
+  border-radius: 5px;
+  padding: 5px; /* Reduced padding */
+  display: inline-block; /* This will shrink the container to fit its content */
+  background-color:  #f2f2f2;
+  border: 1px solid #000;
+  font-size: 0.8rem;
+}
+.title-color-selector-container{
+  position: absolute;
+  margin-top: -140px;
+  margin-left: 170px;
+}
+.title-color-selector-container button {
+  font-size: 1rem;
 }

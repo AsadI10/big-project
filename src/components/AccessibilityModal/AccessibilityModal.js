@@ -20,6 +20,22 @@ const speakText = (text) => {
 
 const AccessibilityModal = ({ show, onHide }) => {
 
+  // New state for title color
+  const [titleColor, setTitleColor] = useState('#000000');
+
+  // Function to change the title color
+  const changeTitleColor = (color) => {
+    setTitleColor(color);
+    // Apply the color to title elements
+    const titleElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6'); // Add other selectors if needed
+    titleElements.forEach(element => {
+      element.style.color = color;
+    });
+  };
+
+  //adding text colors
+  const titleColors = ['#34568B', '#6B5B95', '#88B04B', '#F7CAC9', '#92A8D1', '#955251', '#B565A7'];
+
   // function for magnifier
   const [isTextMagnified, setIsTextMagnified] = useState(false);
 
@@ -221,6 +237,28 @@ return (
   <button onClick={toggleTextMagnification} className="text-magnification-button">
     {isTextMagnified ? 'Turn Off Magnification' : 'Turn On Magnification'}
   </button>
+</div>
+<div className="title-color-selector-container">
+  <p>Adjust Title Colors</p>
+  <div className="color-options">
+    {titleColors.map((color, index) => (
+    <button
+    key={index}
+    style={{
+      backgroundColor: color,
+      width: '30px',
+      borderRadius: '50%',
+      height: '30px',
+      cursor: 'pointer',
+      border: 'none',
+      margin: '0 5px',
+      }}
+      aria-label={`Change title color to ${color}`}
+      onClick={() => changeTitleColor(color)}
+      />
+      ))}
+      </div>
+      <button onClick={onHide}>Cancel</button>
 </div>
       </Modal.Body>
     </Modal>
