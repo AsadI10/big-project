@@ -241,3 +241,15 @@
 .title-color-selector-container button {
   font-size: 1rem;
 }
+/* reset button and the statement button */
+.header-buttons-container{
+  display: flex;
+  align-items: center; /* Center buttons horizontally */
+  gap: 10px; 
+  margin-left: -268px;
+  margin-top: 90px;
+}
+.reset-button,
+.statement-button {
+  font-size: 1.25rem;
+}

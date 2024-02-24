@@ -20,6 +20,26 @@ const speakText = (text) => {
 
 const AccessibilityModal = ({ show, onHide }) => {
 
+  //function for resetting all settings to default
+  const resetSettings = () => {
+    setTitleColor('#000000');
+    setBackgroundColor('#FFFFFF');
+    setIsTextMagnified(false);
+    setIsLowSaturation(false);
+    setTextColor('#000000');
+    setTheme('light');
+}
+  //This is for global styles
+  document.body.style.color = '#000000';
+  document.body.style.backgroundColor = '#FFFFFF';
+  document.body.classList.remove('text-magnified', 'magnify', 'low-saturation', 'dark-theme');
+
+  //this is the satement function 
+  const showAccessibilityStatement = () => {
+    alert("Accessibility features help users with different abilities navigate and use the software effectively. For assistance, please reach out to our support team.");
+};
+
+
   // New state for title color
   const [titleColor, setTitleColor] = useState('#000000');
 
@@ -156,6 +176,14 @@ return (
 {/* <Modal show={show} onHide={onHide} centered> Thius is centered*/} 
 <Modal.Header closeButton>
   <Modal.Title className='modal-title-custom'>Accessibility Adjustments</Modal.Title>
+  <div className="header-buttons-container">
+    <button onClick={resetSettings} className="reset-button">
+      Reset Settings
+    </button>
+    <button onClick={showAccessibilityStatement} className="statement-button">
+      Statement
+    </button>
+  </div>
   </Modal.Header>
    <Modal.Body>
     {/* <button className='button-square' onClick={toggleDarkTheme}>
