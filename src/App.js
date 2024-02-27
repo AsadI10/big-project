@@ -8,6 +8,7 @@ import Body from '../src/components/body/Body.js';
 import Footer from './components/footer/Footer.js';
 import LatestNews from './components/body/LatestNews.js';
 import Testimonials from './components/body/FeedbackPage.js';
+import SocialFollow from './components/body/SocialFollow.js'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Body/>
       <Testimonials/>
       <LatestNews/>
+      <SocialFollow/>
       <Footer/>
     </div>
   );
