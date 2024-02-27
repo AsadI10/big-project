@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import FacebookIcon from '../../assets/images/Facebook.png';
 import InstagramIcon from '../../assets/images/Instagram.jpg';
 import YoutubeIcon from '../../assets/images/youtube.png';
