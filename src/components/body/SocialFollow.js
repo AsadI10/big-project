@@ -6,7 +6,7 @@ import YoutubeIcon from '../../assets/images/youtube.png';
 
 const SocialFollow = () => {
     const images = [
-        { src: 'path_to_your_image1.jpg', alt: 'Description 1' },
+        { src: './assets/images/pic1.jpg', alt: 'Entrance To the theme Park' },
         { src: 'path_to_your_image2.jpg', alt: 'Description 2' },
         { src: 'path_to_your_image3.jpg', alt: 'Description 3' },
       ];
