@@ -1707,11 +1707,6 @@
   dependencies:
     "@swc/helpers" "^0.5.0"
 
-"@remix-run/router@1.15.0":
-  version "1.15.0"
-  resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.15.0.tgz#461a952c2872dd82c8b2e9b74c4dfaff569123e2"
-  integrity sha512-HOil5aFtme37dVQTB6M34G95kPM3MMuqSmIRVCC52eKV+Y/tGSqw9P3rWhlAx6A+mz+MoX+XxsGsNJbaI5qCgQ==
-
 "@restart/hooks@^0.4.9":
   version "0.4.15"
   resolved "https://registry.npmjs.org/@restart/hooks/-/hooks-0.4.15.tgz"
@@ -7996,21 +7991,6 @@ react-refresh@^0.11.0:
   resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.11.0.tgz"
   integrity sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==
 
-react-router-dom@^6.22.0:
-  version "6.22.0"
-  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.22.0.tgz#177c8bd27146decbb991eafb5df159f7a9f70035"
-  integrity sha512-z2w+M4tH5wlcLmH3BMMOMdrtrJ9T3oJJNsAlBJbwk+8Syxd5WFJ7J5dxMEW0/GEXD1BBis4uXRrNIz3mORr0ag==
-  dependencies:
-    "@remix-run/router" "1.15.0"
-    react-router "6.22.0"
-
-react-router@6.22.0:
-  version "6.22.0"
-  resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.22.0.tgz#a22b44851a79dafc6b944cb418db3e80622b9be1"
-  integrity sha512-q2yemJeg6gw/YixRlRnVx6IRJWZD6fonnfZhN1JIOhV2iJCPeRNSH3V1ISwHf+JWcESzLC3BOLD1T07tmO5dmg==
-  dependencies:
-    "@remix-run/router" "1.15.0"
-
 react-scripts@5.0.1:
   version "5.0.1"
   resolved "https://registry.npmjs.org/react-scripts/-/react-scripts-5.0.1.tgz"
@@ -8323,16 +8303,6 @@ rollup@^2.43.1:
   integrity sha512-uKxbd0IhMZOhjAiD5oAFp7BqvkA4Dv47qpOCtaNvng4HBwdbWtdOh8f5nZNuk2rp51PMGk3bzfWu5oayNEuYnw==
   optionalDependencies:
     fsevents "~2.3.2"
-
-route@^0.2.5:
-  version "0.2.5"
-  resolved "https://registry.yarnpkg.com/route/-/route-0.2.5.tgz#edd77b83909187266c7674e2938fd994fba009ec"
-  integrity sha512-B88LDMAwyFpIY54KKnyQknA+pTvNsBUK/tMaMHCmny8IB54/bLvtQAaSDrzYyAUgrWGHkwhXoRwoceKZa1PItQ==
-
-routes@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/routes/-/routes-2.1.0.tgz#475571192a48f99b6c065dd926bb75e8ae83e8a2"
-  integrity sha512-ipKiJOw1LUmlfusmWq0XWGJRVT4FdB8ymKvct2OpjN6lXYQa7W/tJjD75W7bzYghdfV1eObdM3Gh7vuVwttPcA==
 
 run-parallel@^1.1.9:
   version "1.2.0"
