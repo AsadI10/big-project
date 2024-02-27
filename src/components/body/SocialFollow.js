@@ -1,38 +1,33 @@
 import React from 'react';
-import FacebookIcon from '../../assets/images/Facebook.png';
-import InstagramIcon from '../../assets/images/Instagram.jpg';
-import YoutubeIcon from '../../assets/images/youtube.png';
+import './SocialFollow.css';
+import pic1 from '../../assets/images/pic1.jpg';
+
+import { FaFacebookSquare, FaYoutube, FaInstagram } from 'react-icons/fa';
+
 
 
 const SocialFollow = () => {
-    const images = [
-        { src: './assets/images/pic1.jpg', alt: 'Entrance To the theme Park' },
-        { src: 'path_to_your_image2.jpg', alt: 'Description 2' },
-        { src: 'path_to_your_image3.jpg', alt: 'Description 3' },
-      ];
 
   return (
-  <div className="social-follow-container">
-    <div className="hashtag">#draytonmanor</div>
-    
-    <div className="image-gallery">
-        {images.map((image, index) => (
-            <img key={index} src={image.src} alt={image.alt} />
-        ))}
-    </div>
-
-    <div className="social-media">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-          <img src={FacebookIcon} alt="Facebook" />
+  <div className="social-media-section">
+    <h2>#VistaVoyage</h2>
+    <p>Follow and tag us on social networks</p>
+    <div className="visitor-images">
+      <img src={pic1} alt="Entrance to Theme Park" />
+      {/* Visitor images here */}
+      </div>
+      <div className="social-media-icons">
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+          <FaFacebookSquare />
         </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-          <img src={InstagramIcon} alt="Instagram" />
+        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+          <FaYoutube />
         </a>
-        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-          <img src={YoutubeIcon} alt="YouTube" />
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+          <FaInstagram />
         </a>
       </div>
-    </div>
+  </div>
   );
 }
 

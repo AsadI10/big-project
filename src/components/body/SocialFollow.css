@@ -1,0 +1,28 @@
+.social-media-section {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 20px;
+}
+.social-media-section h2 {
+  color: #333;
+  margin-bottom: 10px;
+}  
+.visitor-images img {
+  width: 150px;
+  margin: 0 10px;
+}
+.social-media-icons {
+  margin-top: 20px;
+}  
+.social-media-icons a {
+  margin: 0 10px;
+  font-size: 24px;
+  color: #000;
+} 
+.social-media-icons img {
+  width: 40px;
+}
+.social-media-icons svg {
+  width: 25px; 
+  height: 25px;
+}
