@@ -47,7 +47,7 @@ const AccessibilityModal = ({ show, onHide }) => {
   const changeTitleColor = (color) => {
     setTitleColor(color);
     // Apply the color to title elements
-    const titleElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6'); // Add other selectors if needed
+    const titleElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
     titleElements.forEach(element => {
       element.style.color = color;
     });
