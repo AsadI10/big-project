@@ -137,7 +137,10 @@ const textColors = ['#34568B', '#6B5B95', '#88B04B', '#F7CAC9', '#92A8D1', '#955
 const [textColor, setTextColor] = useState('#000000'); // Default text color
 const changeTextColor = (color) => {
   setTextColor(color);
-  document.body.style.color = color; // This will change the text color of the entire body
+  const titleElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6 , p, Button, title, Modal.Title, nav, span'); // Add other selectors if needed
+  titleElements.forEach(element => {
+    element.style.color = color;
+  }); // this code is for all the body   document.body.style.color = color;
 };
 useEffect(() => {
   document.documentElement.style.setProperty('--text-color', textColor);
