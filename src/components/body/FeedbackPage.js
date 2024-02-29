@@ -39,7 +39,6 @@ const FeedbackPage = () => {
         <div className="testimonial">
           <p className="quote">{testimonials[activeIndex].quote}</p>
           <p className="author">{testimonials[activeIndex].author}</p>
-          {/* You can dynamically generate rating stars based on testimonials[activeIndex].rating */}
         </div>
         <button onClick={nextTestimonial}>&gt;</button>
       </div>

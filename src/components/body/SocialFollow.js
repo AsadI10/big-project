@@ -14,7 +14,6 @@ const SocialFollow = () => {
     <p>Follow and tag us on social networks</p>
     <div className="visitor-images">
       <img src={pic1} alt="Entrance to Theme Park" />
-      {/* Visitor images here */}
       </div>
       <div className="social-media-icons">
         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
