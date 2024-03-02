@@ -1,6 +1,10 @@
 import React from 'react';
 import './SocialFollow.css';
 import pic1 from '../../assets/images/pic1.jpg';
+import pic2 from '../../assets/images/pic2.jpg';
+import pic3 from '../../assets/images/pic3.jpg';
+import pic4 from '../../assets/images/pic4.jpg';
+import pic5 from '../../assets/images/pic5.jpg';
 
 import { FaFacebookSquare, FaYoutube, FaInstagram } from 'react-icons/fa';
 
@@ -14,7 +18,11 @@ const SocialFollow = () => {
     <p>Follow and tag us on social networks</p>
     <div className="visitor-images">
       <img src={pic1} alt="Entrance to Theme Park" />
-      </div>
+      <img src={pic2} alt='Theme Park'/>
+      <img src={pic3} alt='People having fun'/>
+      <img src={pic4} alt='Scary Ride'/>
+      <img src={pic5} alt='People waiting to use this ride!'/>
+    </div>
       <div className="social-media-icons">
         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
           <FaFacebookSquare />
