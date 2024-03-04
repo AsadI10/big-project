@@ -20,6 +20,19 @@ const speakText = (text) => {
 
 const AccessibilityModal = ({ show, onHide }) => {
 
+//functions for fontsize
+const [fontSizePercentage, setFontSizePercentage] = useState(100);
+const increaseFontSize = () => {
+  setFontSizePercentage((prevFontSizePercentage) => prevFontSizePercentage + 10);
+};
+const decreaseFontSize = () => {
+  setFontSizePercentage((prevFontSizePercentage) => prevFontSizePercentage - 10);
+};
+useEffect(() => {
+  document.body.style.fontSize = `${fontSizePercentage}%`;
+}, [fontSizePercentage]);
+
+
 //function for resetting all settings to default
 const resetSettings = () => {
   setTitleColor('#000000');
@@ -291,6 +304,12 @@ backdrop={false}
           </div>
           <button onClick={onHide}>Cancel</button>
         </div>
+        <div className="font-size-adjustment-controls">
+        <div className="font-size-adjustment-title">Adjust Font Sizing</div>
+          <button onClick={decreaseFontSize}>-</button>
+          <span>{fontSizePercentage}%</span>
+          <button onClick={increaseFontSize}>+</button>
+      </div>
       </Modal.Body>
     </Modal>
   );
