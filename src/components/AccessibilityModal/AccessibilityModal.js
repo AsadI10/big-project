@@ -20,6 +20,18 @@ const speakText = (text) => {
 
 const AccessibilityModal = ({ show, onHide }) => {
 
+//left text alignment function
+const [textAlign, setTextAlign] = useState('center'); // Default text alignment
+const toggleTextAlignment = () => {
+  setTextAlign(textAlign === 'left' ? 'center' : 'left');
+};
+useEffect(() => {
+  const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p');
+  textElements.forEach(element => {
+    element.style.textAlign = textAlign;
+  });
+}, [textAlign]);
+
 //functions for fontsize
 const [fontSizePercentage, setFontSizePercentage] = useState(100);
 const increaseFontSize = () => {
@@ -304,6 +316,11 @@ backdrop={false}
           </div>
           <button onClick={onHide}>Cancel</button>
         </div>
+      <div className="text-alignment-controls">
+        <button onClick={toggleTextAlignment}>
+          Align Left
+        </button>
+      </div>
         <div className="font-size-adjustment-controls">
         <div className="font-size-adjustment-title">Adjust Font Sizing</div>
           <button onClick={decreaseFontSize}>-</button>

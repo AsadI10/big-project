@@ -286,3 +286,18 @@
   font-size: 1rem;
   padding: 0 30px;
 }
+/*Left Text alignment CSS */
+.text-alignment-controls button {
+  background-color: #f2f2f2;
+  border: none;
+  padding: 10px 20px;
+  /* margin-top: 10px; */
+  cursor: pointer;
+  height: 115px;
+  width: 120px;
+  position: absolute;
+  border: 1px solid #000;
+}
+.text-alignment-controls button.active {
+  background-color: #d0d0d0;
+}
