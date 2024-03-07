@@ -101,22 +101,35 @@ useEffect(() => {
 }, [isTextMagnified]);
 
 //This is code for the narrator
-const [synth] = useState(window.speechSynthesis);
-const [utterance] = useState(new SpeechSynthesisUtterance());
 const getAllText = () => {
-const bodyText = document.body.innerText; // or document.querySelector('.your-container').innerText;
-  return bodyText;
+const walker = document.createTreeWalker(
+document.body,
+NodeFilter.SHOW_TEXT,
+null,
+false
+);
+let text = '';
+let node;
+while ((node = walker.nextNode())) text += node.nodeValue;
+return text;
 };
 
+const [synth] = useState(window.speechSynthesis);
+const [utterance] = useState(new SpeechSynthesisUtterance());
+// const getAllText = () => {
+// const bodyText = document.body.innerText; // or document.querySelector('.your-container').innerText;
+//   return bodyText;
+// };
 const startNarration = () => {
+  // utterance.text = getAllText();
+  // synth.speak(utterance);
+  synth.cancel(); // Make sure to cancel any ongoing speech first
   utterance.text = getAllText();
   synth.speak(utterance);
 };
-
 const pauseNarration = () => {
   synth.pause();
 };
-
 const stopNarration = () => {
   synth.cancel();
 };
