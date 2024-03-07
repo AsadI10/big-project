@@ -5,6 +5,13 @@ import amusement from '../../assets/images/amusement.jpg';
 import park3 from '../../assets/images/park3.jpg';
 import park4 from '../../assets/images/park4.jpg';
 import park5 from '../../assets/images/park5.jpg';
+// import the pages here 
+import SideBar from '../SideBar';
+import Body from '../body/Body';
+import Footer from '../footer/Footer';
+import LatestNews from '../body/LatestNews';
+import Testimonials from '../body/FeedbackPage';
+import SocialFollow from '../body/SocialFollow';
 
 const body = () => {
   return (
@@ -23,6 +30,13 @@ const body = () => {
         <img className='d-block w-100 banner-image' src={park5} alt='Park-3'/>
       </Carousel.Item>
       </Carousel>
+      
+      <SideBar/>
+      <Body />
+      <Testimonials />
+      <LatestNews />
+      <SocialFollow />
+      <Footer />
     </div>
   )
 }
