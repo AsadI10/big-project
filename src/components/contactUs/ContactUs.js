@@ -36,6 +36,11 @@ setFormData({ name: '', email: '', message: '' });
 
 return (
   <div className="contact-form">
+    <div className="contact-header">
+      <h1>Get in touch...</h1>
+      <p>To send us feedback or discuss your park visit, please complete and submit the form below.</p>
+      <p>We aim to respond within 10 working days.</p>
+    </div>
 <>
 <form onSubmit={handleSubmit}>
   <label htmlFor="name">Name:</label>
@@ -45,6 +50,7 @@ return (
     name="name"
     value={formData.name}
     onChange={handleChange}
+    required
 />
 
 <label htmlFor="email">Email:</label>
@@ -54,7 +60,22 @@ return (
   name="email"
   value={formData.email}
   onChange={handleChange}
+  required
 />
+
+<label htmlFor="subject">Subject of Enquiry *</label>
+<select
+  id="subject"
+  name="subject"
+  value={formData.subject}
+  onChange={handleChange}
+  required
+>
+  <option value="">Please select</option>
+  <option value="General Inquiry">General Inquiry</option>
+  <option value="Support">Support</option>
+  <option value="Sales">Sales</option>
+  </select>
 
 <label htmlFor="message">Message:</label>
 <textarea
@@ -62,6 +83,7 @@ return (
   name="message"
   value={formData.message}
   onChange={handleChange}
+  required 
 />
 
 <button type="submit">Send Message</button>
