@@ -81,14 +81,13 @@ const changeTitleColor = (color) => {
 //adding text colors
 const titleColors = ['#34568B', '#6B5B95', '#88B04B', '#F7CAC9', '#92A8D1', '#955251', '#B565A7'];
 
+
 // function for magnifier
 const [isTextMagnified, setIsTextMagnified] = useState(false);
-
 // Function to toggle magnification on and off
 const toggleTextMagnification = () => {
   setIsTextMagnified(!isTextMagnified);
 };
-
 useEffect(() => {
   const textElements = document.querySelectorAll('.modal-body *');
   textElements.forEach(element => {
@@ -99,6 +98,19 @@ useEffect(() => {
     }
   });
 }, [isTextMagnified]);
+
+/*  This will zookm to 1.2 levelnot needed now */
+// const toggleTextMagnification = () => {
+//   setIsTextMagnified(!isTextMagnified);
+// };
+// useEffect(() => {
+//   if (isTextMagnified) {
+//     document.body.classList.add('magnify-text');
+//   } else {
+//     document.body.classList.remove('magnify-text');
+//   }
+// }, [isTextMagnified]);
+
 
 //This is code for the narrator
 const getAllText = () => {

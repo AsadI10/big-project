@@ -301,3 +301,7 @@
 .text-alignment-controls button.active {
   background-color: #d0d0d0;
 }
+/*This is manually done when clicked everything zooms to 1.5em */
+/* .magnify-text {
+  font-size: 1.5em !important; Change the value as needed and use !important to override other styles if necessary
+} */
