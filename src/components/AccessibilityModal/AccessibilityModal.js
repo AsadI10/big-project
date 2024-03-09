@@ -20,6 +20,19 @@ const speakText = (text) => {
 
 const AccessibilityModal = ({ show, onHide }) => {
 
+  //line height control fucntions
+  const [lineHeight, setLineHeight] = useState(1); // 1 is the default line height (which is 100%)
+  const increaseLineHeight = () => {
+    setLineHeight((prevLineHeight) => prevLineHeight + 0.1);
+  };
+  
+  const decreaseLineHeight = () => {
+    setLineHeight((prevLineHeight) => prevLineHeight - 0.1);
+  };
+  useEffect(() => {
+    document.body.style.lineHeight = `${lineHeight}`;
+  }, [lineHeight]);  
+
   //left text alignment function
   const [textAlign, setTextAlign] = useState('center'); // Default text alignment
   const toggleTextAlignment = () => {
@@ -351,6 +364,12 @@ const AccessibilityModal = ({ show, onHide }) => {
           <button onClick={decreaseFontSize}>-</button>
           <span>{fontSizePercentage}%</span>
           <button onClick={increaseFontSize}>+</button>
+        </div>
+        <div className="line-height-controls">
+          <div className="line-height-controls-title">Adjust Line Height</div>
+          <button onClick={decreaseLineHeight}>-</button>
+          <span>{(lineHeight * 100).toFixed(0)}%</span> {/* This will convert the lineHeight to a percentage display */}
+          <button onClick={increaseLineHeight}>+</button>
         </div>
       </Modal.Body>
     </Modal>
