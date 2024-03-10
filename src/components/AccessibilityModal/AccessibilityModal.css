@@ -337,3 +337,18 @@
   font-size: 1rem;
   padding: 0 30px;
 }
+/*Right ALignment css */
+.text-right button{
+  background-color: #f2f2f2;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  height: 115px;
+  width: 120px;
+  position: absolute;
+  border: 1px solid #000;
+  margin-top: 30px;
+}
+.text-right button.active {
+  background-color: #d0d0d0;
+}
