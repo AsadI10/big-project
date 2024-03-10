@@ -20,6 +20,9 @@ const speakText = (text) => {
 
 const AccessibilityModal = ({ show, onHide }) => {
 
+  //Align Right Functionality
+  const [textAlignment, setTextAlignment] = useState('left');
+
   //line height control fucntions
   const [lineHeight, setLineHeight] = useState(1); // 1 is the default line height (which is 100%)
   const increaseLineHeight = () => {
