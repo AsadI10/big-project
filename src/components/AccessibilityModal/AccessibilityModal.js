@@ -23,7 +23,7 @@ const AccessibilityModal = ({ show, onHide }) => {
   //Align Right Functionality
   const [textAlignment, setTextAlignment] = useState('left');
   const alignTextRight = () => {
-    setTextAlignment('right');
+    setTextAlignment(prevAlignment => prevAlignment === 'left' ? 'right' : 'left');
   };
   useEffect(() => {
     const textElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6'); // Target text elements
@@ -31,7 +31,7 @@ const AccessibilityModal = ({ show, onHide }) => {
       element.style.textAlign = textAlignment;
     });
   }, [textAlignment]);
-  
+
 
   //line height control fucntions
   const [lineHeight, setLineHeight] = useState(1); // 1 is the default line height (which is 100%)
@@ -377,6 +377,11 @@ const AccessibilityModal = ({ show, onHide }) => {
           <button onClick={decreaseFontSize}>-</button>
           <span>{fontSizePercentage}%</span>
           <button onClick={increaseFontSize}>+</button>
+        </div>
+        <div className='text-right'>
+          <button onClick={alignTextRight} className="align-right-button">
+            Align Right
+          </button>
         </div>
         <div className="line-height-controls">
           <div className="line-height-controls-title">Adjust Line Height</div>
