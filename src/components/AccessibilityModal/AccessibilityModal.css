@@ -235,8 +235,10 @@
 }
 .title-color-selector-container{
   position: absolute;
-  margin-top: -140px;
+  margin-top: -137px;
   margin-left: 170px;
+  width: 290px;
+  height: 115px;
 }
 .title-color-selector-container button {
   font-size: 1rem;
