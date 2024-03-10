@@ -379,7 +379,7 @@ const AccessibilityModal = ({ show, onHide }) => {
           <button onClick={increaseFontSize}>+</button>
         </div>
         <div className='text-right'>
-          <button onClick={alignTextRight} className="align-right-button">
+          <button onClick={alignTextRight}>
             Align Right
           </button>
         </div>
