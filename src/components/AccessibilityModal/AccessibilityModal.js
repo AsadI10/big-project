@@ -22,6 +22,16 @@ const AccessibilityModal = ({ show, onHide }) => {
 
   //Align Right Functionality
   const [textAlignment, setTextAlignment] = useState('left');
+  const alignTextRight = () => {
+    setTextAlignment('right');
+  };
+  useEffect(() => {
+    const textElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6'); // Target text elements
+    textElements.forEach(element => {
+      element.style.textAlign = textAlignment;
+    });
+  }, [textAlignment]);
+  
 
   //line height control fucntions
   const [lineHeight, setLineHeight] = useState(1); // 1 is the default line height (which is 100%)
