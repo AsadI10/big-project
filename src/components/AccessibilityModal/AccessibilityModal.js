@@ -73,17 +73,50 @@ const AccessibilityModal = ({ show, onHide }) => {
 
   //function for resetting all settings to default
   const resetSettings = () => {
+    //Reset Title COlour
     setTitleColor('#000000');
+    // Reset background color to white
     setBackgroundColor('#FFFFFF');
+    // Reset text is magnified
     setIsTextMagnified(false);
+    // Reset low saturation mode is enabled
     setIsLowSaturation(false);
+    // Reset text color
     setTextColor('#000000');
+    // Reset theme to 'light'
     setTheme('light');
-  }
+    
+    // Reset font size to 100%
+    setFontSizePercentage(100);
+    // Reset line height to normal
+    setLineHeight(1);
+    // Reset text alignment to left
+    setTextAlign('center');
+    setTextAlignment('center');
+  
+  // Apply resets immediately to elements
+  const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, title');
+  textElements.forEach(element => {
+    element.style.color = '#000000';
+    element.style.textAlign = 'center';
+  });
+
   //This is for global styles
-  document.body.style.color = '#000000';
+  document.body.style.color = '#FFFFFF';
   document.body.style.backgroundColor = '#FFFFFF';
   document.body.classList.remove('text-magnified', 'magnify', 'low-saturation', 'dark-theme');
+  document.body.style.backgroundColor = '#FFFFFF';
+  document.body.style.fontSize = '100%';
+  document.body.style.lineHeight = 'normal';
+
+  // If narration is ongoing, stop it
+  if (synth && synth.speaking) {
+    synth.cancel();
+  }
+
+  // Reset input text for speech
+  setInputText('');
+}
 
   //this is the satement function 
   const showAccessibilityStatement = () => {
