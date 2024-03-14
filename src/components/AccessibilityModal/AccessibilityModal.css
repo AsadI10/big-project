@@ -357,3 +357,8 @@
   background-color: #d0d0d0;
 }
 /* Vision impaired*/
+.vision-impaired{
+  font-size: larger !important;
+  color: high contrast colors !important;
+  line-height: higher for better readability !important;
+}
