@@ -127,7 +127,7 @@ const AccessibilityModal = ({ show, onHide }) => {
 
 
   // New state for title color
-  const [setTitleColor] = useState('#000000');
+  const [titleColor, setTitleColor] = useState('#000000');
 
   // Function to change the title color
   const changeTitleColor = (color) => {
@@ -262,7 +262,7 @@ const AccessibilityModal = ({ show, onHide }) => {
   const backgroundColors = ['#FFFFFF', '#0000FF', '#800080', '#FF0000', '#00FF00', '#FFFF00', '#000000'];
 
   // State to hold the selected background color
-  const [setBackgroundColor] = useState('#FFFFFF');
+  const [backgroundColor, setBackgroundColor] = useState('#FFFFFF');
 
   useEffect(() => {
     // Apply the theme when the component mounts
