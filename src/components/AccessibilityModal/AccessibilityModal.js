@@ -24,6 +24,17 @@ const AccessibilityModal = ({ show, onHide }) => {
   const [visionImpaired, setVisionImpaired] = useState(false);
   const [seizureSafe, setSeizureSafe] = useState = (false);
 
+  //toggle funnctionality vision impaired profile
+  const toggleVisionImpaired = () => {
+    setVisionImpaired(prev => !prev);
+    if(!visionImpaired){
+      document.body.classList.add('vision-impaired');
+    }
+    else{
+      document.bodt.classList.remove('vision-impaired')
+    }
+  };
+
   //Align Right Functionality
   const [textAlignment, setTextAlignment] = useState('left');
   const alignTextRight = () => {
