@@ -20,6 +20,10 @@ const speakText = (text) => {
 
 const AccessibilityModal = ({ show, onHide }) => {
 
+  //more accessibility functionality added- (vision impaired file and seizure file)
+  const [visionImpaired, setVisionImpaired] = useState(false);
+  const [seizureSafe, setSeizureSafe] = useState = (false);
+
   //Align Right Functionality
   const [textAlignment, setTextAlignment] = useState('left');
   const alignTextRight = () => {
