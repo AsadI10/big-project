@@ -21,6 +21,33 @@ const speakText = (text) => {
 const AccessibilityModal = ({ show, onHide }) => {
 
   //more accessibility functionality added- (vision impaired file and seizure file)
+  const [visionImpaired, setVisionImpaired] = useState(false);
+  //Vision Impaired function
+  const toggleVisionImpaired = () => {
+    setVisionImpaired((prev) => {
+      const newState = !prev;
+      if (newState) {
+        document.body.classList.add('vision-impaired');
+      } else {
+        document.body.classList.remove('vision-impaired');
+        // Revert visuals back to normal here
+      }
+      return newState;
+    });
+  };
+
+// this effect hook to component
+useEffect(() => {
+  // Add or remove class on body based on visionImpaired state
+  const className = 'vision-impaired';
+  if (visionImpaired) {
+    document.body.classList.add(className);
+  } else {
+    document.body.classList.remove(className);
+  }
+  // Cleanup function to remove the class when the component unmounts or the state changes
+  return () => document.body.classList.remove(className);
+}, [visionImpaired]);
 
   //Align Right Functionality
   const [textAlignment, setTextAlignment] = useState('left');
