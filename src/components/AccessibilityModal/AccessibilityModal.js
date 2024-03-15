@@ -22,6 +22,9 @@ const AccessibilityModal = ({ show, onHide }) => {
 
   //more accessibility functionality added- (vision impaired file and seizure file)
   const [visionImpaired, setVisionImpaired] = useState(false);
+  const [seizureSafe, setSeizureSafe] = useState(false);
+
+  
   //Vision Impaired function
   const toggleVisionImpaired = () => {
     setVisionImpaired((prev) => {
