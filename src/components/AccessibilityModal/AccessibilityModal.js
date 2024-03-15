@@ -355,17 +355,19 @@ const AccessibilityModal = ({ show, onHide }) => {
       {isDarkThemeEnabled ? 'Disable Dark Theme' : 'Enable Dark Theme'}
       </button> */}
       <div className="profile-toggle-container">
-        <div className="profile-toggle">
-          <label>Seizure Safe Profile: {seizureSafe ? 'ON' : 'OFF'}</label>
-          <button onClick={toggleSeizureSafe} className={`toggle-button ${seizureSafe ? 'on' : 'off'}`}>
-            {seizureSafe ? 'Disable' : 'Enable'}
-          </button>
+        <div className="profile-toggle seizure-safe-toggle">
+        <span className="profile-description">Seizure Safe Profile</span>
+          <label className="switch">
+            <input type="checkbox" checked={seizureSafe} onChange={toggleSeizureSafe} />
+        <span className="slider round"></span>
+          </label>
         </div>
-        <div className="profile-toggle">
-          <label>Vision Impaired Profile: {visionImpaired ? 'ON' : 'OFF'}</label>
-          <button onClick={toggleVisionImpaired} className={`toggle-button ${visionImpaired ? 'on' : 'off'}`}>
-            {visionImpaired ? 'Disable' : 'Enable'}
-          </button>
+          <div className="profile-toggle vision-impaired-toggle">
+          <span className="profile-description">Vision Impaired Profile</span>
+          <label className="switch">
+            <input type="checkbox" checked={visionImpaired} onChange={toggleVisionImpaired} />
+            <span className="slider round"></span>
+          </label>
         </div>
       </div>
         <div className='theme-Toggle' data-theme={theme} >
