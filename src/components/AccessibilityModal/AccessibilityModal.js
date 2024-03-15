@@ -354,6 +354,20 @@ const AccessibilityModal = ({ show, onHide }) => {
         {/* <button className='button-square' onClick={toggleDarkTheme}>
       {isDarkThemeEnabled ? 'Disable Dark Theme' : 'Enable Dark Theme'}
       </button> */}
+      <div className="profile-toggle-container">
+        <div className="profile-toggle">
+          <label>Seizure Safe Profile: {seizureSafe ? 'ON' : 'OFF'}</label>
+          <button onClick={toggleSeizureSafe} className={`toggle-button ${seizureSafe ? 'on' : 'off'}`}>
+            {seizureSafe ? 'Disable' : 'Enable'}
+          </button>
+        </div>
+        <div className="profile-toggle">
+          <label>Vision Impaired Profile: {visionImpaired ? 'ON' : 'OFF'}</label>
+          <button onClick={toggleVisionImpaired} className={`toggle-button ${visionImpaired ? 'on' : 'off'}`}>
+            {visionImpaired ? 'Disable' : 'Enable'}
+          </button>
+        </div>
+      </div>
         <div className='theme-Toggle' data-theme={theme} >
           {/* <button>Light Theme</button> */}
           <i onClick={switchTheme} className='fas fa-toggle-on'>Dark Contrast</i>
