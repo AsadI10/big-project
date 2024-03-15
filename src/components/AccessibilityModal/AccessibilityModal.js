@@ -24,7 +24,29 @@ const AccessibilityModal = ({ show, onHide }) => {
   const [visionImpaired, setVisionImpaired] = useState(false);
   const [seizureSafe, setSeizureSafe] = useState(false);
 
-  
+  //Seiizure safe function
+  const toggleSeizureSafe = () => {
+    setSeizureSafe((prev) => {
+      const newState = !prev;
+      if (newState) {
+        document.body.classList.add('seizure-safe');
+      } else {
+        document.body.classList.remove('seizure-safe');
+      }
+      return newState;
+    });
+  };
+  useEffect(() => {
+    const className = 'seizure-safe';
+    if (seizureSafe) {
+      document.body.classList.add(className);
+    } else {
+      document.body.classList.remove(className);
+    }
+    return () => document.body.classList.remove(className);
+  }, [seizureSafe]);
+
+
   //Vision Impaired function
   const toggleVisionImpaired = () => {
     setVisionImpaired((prev) => {
@@ -38,9 +60,7 @@ const AccessibilityModal = ({ show, onHide }) => {
       return newState;
     });
   };
-
-// this effect hook to component
-useEffect(() => {
+  useEffect(() => {
   // Add or remove class on body based on visionImpaired state
   const className = 'vision-impaired';
   if (visionImpaired) {
@@ -51,6 +71,7 @@ useEffect(() => {
   // Cleanup function to remove the class when the component unmounts or the state changes
   return () => document.body.classList.remove(className);
 }, [visionImpaired]);
+
 
   //Align Right Functionality
   const [textAlignment, setTextAlignment] = useState('left');
