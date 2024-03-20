@@ -200,6 +200,15 @@ const AccessibilityModal = ({ show, onHide }) => {
 
   //function for resetting all settings to default
   const resetSettings = () => {
+    //This will reset ADHD profile
+    setAdhdfriendly(false);
+    //remove the blur effect and hide box if needed
+    document.body.classList.remove('blur-effect');
+    //the focus bar, it will hide it
+    const focusBox = document.querySelector('.focus-box');
+    if (focusBox) {
+      focusBox.style.display = 'none';
+    }
     //Reset Title COlour
     setTitleColor('#000000');
     // Reset background color to white
