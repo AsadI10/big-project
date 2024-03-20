@@ -20,61 +20,6 @@ const speakText = (text) => {
 
 const AccessibilityModal = ({ show, onHide }) => {
 
-  //Functionality for ADHD profile
-  const [adhdFriendly, setAdhdfriendly] = useState(false);
-  //function create the box
-  const createFocusBox = () => {
-    const newFocusBox = document.createElement('div');
-    newFocusBox.id = 'focus-box';
-    newFocusBox.style.position = 'fixed';
-    newFocusBox.style.border = '2px solid blue';
-    newFocusBox.style.zIndex = 1000;
-    newFocusBox.style.pointerEvents = 'none';
-    newFocusBox.style.width = '200px'; // This is size of the focus box
-    newFocusBox.style.height = '100px';
-    newFocusBox.style.display = 'none'; // the focus box hidden
-    document.body.appendChild(newFocusBox);
-    return newFocusBox;
-  };
-  //function to position the box based on the mousehover
-  const MouseMove = (e) => {
-    const focusBox = document.getElementById('focus-box');
-    if(focusBox){
-      focusBox.style.left = '${e.clientX - 100}px'; // this centers the box based on the width
-      focusBox.style.top = '${e.clientY - 50}px'; //this centers the boc based on the height
-      focusBox.style.display = 'block';
-    }
-  }
-  //function to toggle ADHD profile
-  const  toggleAdhdFriendly = () => {
-    setAdhdfriendly((prev) => {
-      if (!prev){
-        // if turning on create the focus box and add the mouse listener
-        createFocusBox();
-        window.addEventListener('mousemove', MouseMove);
-      } else{
-        //if turning off, remove the focus box
-        const focusBox = document.getElementById('focus-box');
-        if (focusBox){
-          focusBox.remove();
-        }
-        window.removeEventListener('mousemove', MouseMove);
-      }
-      return !prev
-    });
-  };
-  //this will clean up component unmount
-  useEffect(() => {
-    return () => {
-      window.removeEventListener('mousemove', MouseMove);
-      const focusBox = document.getElementById('focus-box');
-      if (focusBox) {
-        focusBox.remove();
-    }
-  };
-}, []);
-
-
   //more accessibility functionality added- (vision impaired file and seizure file)
   const [visionImpaired, setVisionImpaired] = useState(false);
   const [seizureSafe, setSeizureSafe] = useState(false);
