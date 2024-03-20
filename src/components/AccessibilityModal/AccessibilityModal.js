@@ -20,6 +20,63 @@ const speakText = (text) => {
 
 const AccessibilityModal = ({ show, onHide }) => {
 
+  //define the Profile states
+  const [adhdFriendly, setAdhdfriendly] = useState(false);
+
+  // Function to create the focus box
+  const createFocusBox = () => {
+    const newFocusBox = document.createElement('div');
+    newFocusBox.id = 'focus-box';
+    newFocusBox.style.position = 'fixed';
+    newFocusBox.style.border = '2px solid blue';
+    newFocusBox.style.zIndex = 1000;
+    newFocusBox.style.pointerEvents = 'none'; //clicks pass through the box
+    newFocusBox.style.width = '200px'; // set the size of the focus box
+    newFocusBox.style.height = '100px';
+    newFocusBox.style.display = 'none'; //focus box hidden
+    document.body.appendChild(newFocusBox);
+    return newFocusBox;
+  };
+  // Function to position the focus box based
+  const onMouseMove = (e) => {
+    const focusBox = document.getElementById('focus-box');
+    if (focusBox) {
+      focusBox.style.left = `${e.clientX - 100}px`; // centers the box based on its width
+      focusBox.style.top = `${e.clientY - 50}px`; // centers the box based on its height
+      focusBox.style.display = 'block';
+    }
+  };
+  // Function to toggle the ADHD Profile
+  const toggleAdhdFriendly = () => {
+    setAdhdfriendly((prev) => {
+      if (!prev) {
+        // If turning on, create the focus box
+        createFocusBox();
+        window.addEventListener('mousemove', onMouseMove);
+      } else {
+        // If turning off remove the focus box
+        const focusBox = document.getElementById('focus-box');
+        if (focusBox) {
+          focusBox.remove();
+        }
+        window.removeEventListener('mousemove', onMouseMove);
+      }
+      return !prev;
+    });
+  };
+  //clean up on component unmount
+  useEffect(() => {
+    return () => {
+      window.removeEventListener('mousemove', onMouseMove);
+      const focusBox = document.getElementById('focus-box');
+      if (focusBox) {
+        focusBox.remove();
+      }
+    };
+  }, []);
+
+
+
   //more accessibility functionality added- (vision impaired file and seizure file)
   const [visionImpaired, setVisionImpaired] = useState(false);
   const [seizureSafe, setSeizureSafe] = useState(false);
@@ -366,6 +423,17 @@ const AccessibilityModal = ({ show, onHide }) => {
           <span className="profile-description">Vision Impaired Profile</span>
           <label className="switch">
             <input type="checkbox" checked={visionImpaired} onChange={toggleVisionImpaired} />
+            <span className="slider round"></span>
+          </label>
+        </div>
+        <div className="profile-toggle">
+          <span className="profile-description">ADHD Friendly Profile</span>
+          <label className="switch">
+            <input
+              type="checkbox"
+              checked={adhdFriendly}
+              onChange={toggleAdhdFriendly}
+            />
             <span className="slider round"></span>
           </label>
         </div>
