@@ -31,8 +31,8 @@ const AccessibilityModal = ({ show, onHide }) => {
     newFocusBox.style.border = '2px solid blue';
     newFocusBox.style.zIndex = 1000;
     newFocusBox.style.pointerEvents = 'none'; //clicks pass through the box
-    newFocusBox.style.width = '200px'; // set the size of the focus box
-    newFocusBox.style.height = '100px';
+    newFocusBox.style.width = '1300px'; // set the size of the focus box
+    newFocusBox.style.height = '120px';
     newFocusBox.style.display = 'none'; //focus box hidden
     document.body.appendChild(newFocusBox);
     return newFocusBox;
