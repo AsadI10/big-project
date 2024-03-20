@@ -74,7 +74,24 @@ const AccessibilityModal = ({ show, onHide }) => {
       }
     };
   }, []);
-
+  // When Friendly Profile is activated:
+  const activateADHDFriendly = () => {
+    //show the focus box
+    const focusBox = document.getElementById('focus-box');
+    focusBox.style.display = 'block';
+    //apply blur to all other elements
+    const content = document.querySelectorAll('body *:not(#focus-box)');
+    content.forEach(el => el.classList.add('blur-background', 'content-exclude-focus'));
+  };
+  // when Profile is deactivated:
+  const deactivateADHDFriendly = () => {
+    // gide the focus box
+    const focusBox = document.getElementById('focus-box');
+    focusBox.style.display = 'none';
+    // remove blur from all elements
+    const content = document.querySelectorAll('body *:not(#focus-box)');
+    content.forEach(el => el.classList.remove('blur-background', 'content-exclude-focus'));
+  };
 
 
   //more accessibility functionality added- (vision impaired file and seizure file)
