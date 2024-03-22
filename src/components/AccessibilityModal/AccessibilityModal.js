@@ -646,6 +646,11 @@ const AccessibilityModal = ({ show, onHide }) => {
             {highlightTitles ? 'Unhighlight Titles' : 'Highlight Titles'}
           </button>
         </div>
+        <div className="cursor-container">
+          <button onClick={toggleBigCursor} className={`cursor-toggle ${bigCursor ? 'active' : ''}`}>
+            Big Black Cursor
+          </button>
+        </div>
       </Modal.Body>
     </Modal>
   );
