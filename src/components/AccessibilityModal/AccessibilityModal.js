@@ -624,6 +624,11 @@ const AccessibilityModal = ({ show, onHide }) => {
             Monochrome
           </button>
         </div>
+        <div className="highlight-Titles-container">
+          <button onClick={toggleHighlightTitles} className={`toggle-button ${highlightTitles ? 'on' : 'off'}`}>
+            {highlightTitles ? 'Unhighlight Titles' : 'Highlight Titles'}
+          </button>
+        </div>
       </Modal.Body>
     </Modal>
   );
