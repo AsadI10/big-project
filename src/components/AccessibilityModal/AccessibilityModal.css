@@ -459,3 +459,18 @@ input:checked + .slider:before {
 .content-exclude-focus {
   transition: filter 0.3s ease-out;
 }
+/* Monochrome CSS*/
+.monochrome-container button{
+  border: 1px solid #000;
+  padding: 20px;
+  width: 120px; 
+  height: 120px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 18px auto;
+  margin-right: 540px;
+  cursor: pointer;
+  background-color:  #f2f2f2;
+}
