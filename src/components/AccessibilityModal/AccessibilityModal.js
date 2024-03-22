@@ -214,6 +214,8 @@ const AccessibilityModal = ({ show, onHide }) => {
 
   //function for resetting all settings to default
   const resetSettings = () => {
+    // reset monochrome
+    setIsMonochrome(false);
     //This will reset ADHD profile
     setAdhdfriendly(false);
     //remove the blur effect and hide box if needed
