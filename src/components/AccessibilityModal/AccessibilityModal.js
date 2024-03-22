@@ -20,6 +20,24 @@ const speakText = (text) => {
 
 const AccessibilityModal = ({ show, onHide }) => {
 
+  //highlight the titles functionality
+  const [highlightTitles, setHighlightTitles] = useState(false);
+  const toggleHighlightTitles = () => {
+    setHighlightTitles(!highlightTitles);
+  };
+  useEffect(() => {
+    const titleElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    if (highlightTitles){
+      titleElements.forEach(element => {
+        element.classList.add('highlight'); //class that highlights the ttiles
+      });
+    } else{
+      titleElements.forEach(element => {
+        element.classList.remove('highlight');
+    });
+  }
+}, [highlightTitles]);
+
   // monochrome functionality
   const [isMonochrome, setIsMonochrome] = useState(false);
   const toggleMonochrome = () => {
