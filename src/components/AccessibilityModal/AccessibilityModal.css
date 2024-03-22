@@ -494,3 +494,19 @@ input:checked + .slider:before {
   border: 1px solid #0066ff;
   border-radius: 4px;
 }
+/* Big Black Cursor CSS styling */
+.big-cursor, .big-cursor * {
+  cursor: url('../../assets/images/CURSORP.png'), auto !important;
+}
+.cursor-container button{
+  border: 1px solid #000;
+  width: 120px; 
+  height: 120px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 340px;
+  cursor: pointer;
+  margin-top: -120px;
+  background-color:  #f2f2f2;
+}
