@@ -20,6 +20,20 @@ const speakText = (text) => {
 
 const AccessibilityModal = ({ show, onHide }) => {
 
+  // monochrome functionality
+  const [isMonochrome, setIsMonochrome] = useState(false);
+  const toggleMonochrome = () => {
+    setIsMonochrome(prevIsMonochrome => !prevIsMonochrome);
+  };
+  useEffect(() => {
+    if (isMonochrome) {
+      document.body.style.filter = 'grayscale(100%)';
+    } else {
+      document.body.style.filter = 'none';
+    }
+  }, [isMonochrome]);
+
+
   //define the Profile states
   const [adhdFriendly, setAdhdfriendly] = useState(false);
 
@@ -584,6 +598,11 @@ const AccessibilityModal = ({ show, onHide }) => {
           <button onClick={decreaseLineHeight}>-</button>
           <span>{(lineHeight * 100).toFixed(0)}%</span> {/* This will convert the lineHeight to a percentage display */}
           <button onClick={increaseLineHeight}>+</button>
+        </div>
+        <div className="monochrome-container">
+          <button onClick={toggleMonochrome} className={`monochrome-button ${isMonochrome ? 'active' : ''}`}>
+            Monochrome
+          </button>
         </div>
       </Modal.Body>
     </Modal>
