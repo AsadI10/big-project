@@ -20,6 +20,19 @@ const speakText = (text) => {
 
 const AccessibilityModal = ({ show, onHide }) => {
 
+  //functionalit of big cursor
+  const [bigCursor, setBigCursor] = useState(false);
+  const toggleBigCursor = () => {
+    setBigCursor((prev) => !prev);
+  };
+  useEffect(() => {
+    if (bigCursor){
+      document.body.classList.add('big-cursor');
+    } else{
+      document.body.classList.remove('big-cursor');
+    }
+  }, [bigCursor]);
+
   //highlight the titles functionality
   const [highlightTitles, setHighlightTitles] = useState(false);
   const toggleHighlightTitles = () => {
@@ -232,6 +245,8 @@ const AccessibilityModal = ({ show, onHide }) => {
 
   //function for resetting all settings to default
   const resetSettings = () => {
+    //reset to normal cursor
+    setBigCursor(false);
     //reset titlehighlighht
     setHighlightTitles(false);
     // reset monochrome
