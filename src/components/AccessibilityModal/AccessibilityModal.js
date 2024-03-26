@@ -210,13 +210,15 @@ const AccessibilityModal = ({ show, onHide }) => {
   const increaseLineHeight = () => {
     setLineHeight((prevLineHeight) => prevLineHeight + 0.1);
   };
-  
   const decreaseLineHeight = () => {
     setLineHeight((prevLineHeight) => prevLineHeight - 0.1);
   };
   useEffect(() => {
-    document.body.style.lineHeight = `${lineHeight}`;
-  }, [lineHeight]);  
+    const mainContent = document.querySelector('.main-content');
+    if (mainContent) {
+      mainContent.style.lineHeight = `${lineHeight}em`;
+    }
+  }, [lineHeight]);
 
   //left text alignment function
   const [textAlign, setTextAlign] = useState('center'); // Default text alignment
