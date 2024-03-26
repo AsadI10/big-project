@@ -15,7 +15,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
+    // called App 
+    <div className="main-content">
       <Router>
         <NavBar />
         <Routes>

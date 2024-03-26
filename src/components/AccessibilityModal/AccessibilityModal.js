@@ -239,7 +239,10 @@ const AccessibilityModal = ({ show, onHide }) => {
     setFontSizePercentage((prevFontSizePercentage) => prevFontSizePercentage - 10);
   };
   useEffect(() => {
-    document.body.style.fontSize = `${fontSizePercentage}%`;
+    const mainContent = document.querySelector('.main-content'); // Make sure you have a 'main-content' class in your HTML
+    if (mainContent) {
+      mainContent.style.fontSize = `${fontSizePercentage}%`;
+    }
   }, [fontSizePercentage]);
 
 
