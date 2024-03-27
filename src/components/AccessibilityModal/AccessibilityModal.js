@@ -57,10 +57,15 @@ const AccessibilityModal = ({ show, onHide }) => {
     setIsMonochrome(prevIsMonochrome => !prevIsMonochrome);
   };
   useEffect(() => {
+    const mainContent = document.querySelector('.main-content');
     if (isMonochrome) {
-      document.body.style.filter = 'grayscale(100%)';
+      if (mainContent) {
+        mainContent.style.filter = 'grayscale(100%)';
+      }
     } else {
-      document.body.style.filter = 'none';
+      if (mainContent) {
+        mainContent.style.filter = 'none';
+      }
     }
   }, [isMonochrome]);
 
