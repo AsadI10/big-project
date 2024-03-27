@@ -198,10 +198,14 @@ const AccessibilityModal = ({ show, onHide }) => {
     setTextAlignment(prevAlignment => prevAlignment === 'left' ? 'right' : 'left');
   };
   useEffect(() => {
-    const textElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6'); // Target text elements
-    textElements.forEach(element => {
-      element.style.textAlign = textAlignment;
-    });
+    //target elements within the '.main-content' class
+    const mainContent = document.querySelector('.main-content'); // Adjust the class as per your application's structure
+    if (mainContent) {
+      const textElements = mainContent.querySelectorAll('p, h1, h2, h3, h4, h5, h6');
+      textElements.forEach(element => {
+        element.style.textAlign = textAlignment;
+      });
+    }
   }, [textAlignment]);
 
 
