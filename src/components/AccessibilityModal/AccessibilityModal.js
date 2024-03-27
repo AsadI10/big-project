@@ -415,7 +415,7 @@ const AccessibilityModal = ({ show, onHide }) => {
   const [textColor, setTextColor] = useState('#000000'); // Default text color
   const changeTextColor = (color) => {
     setTextColor(color);
-    const titleElements = document.querySelectorAll('.main-content h1:not(.accessibility-widget), .main-content h2:not(.accessibility-widget), .main-content h3:not(.accessibility-widget), .main-content h4:not(.accessibility-widget), .main-content h5:not(.accessibility-widget), .main-content h6:not(.accessibility-widget), .main-content p:not(.accessibility-widget), .main-content button:not(.accessibility-widget), .main-content title:not(.accessibility-widget), .main-content nav:not(.accessibility-widget), .main-content span:not(.accessibility-widget)'); // Add other selectors if needed
+    const titleElements = document.querySelectorAll('.main-content *:not(.accessibility-widget), .main-content h2:not(.accessibility-widget), .main-content h3:not(.accessibility-widget), .main-content h4:not(.accessibility-widget), .main-content h5:not(.accessibility-widget), .main-content h6:not(.accessibility-widget), .main-content p:not(.accessibility-widget), .main-content button:not(.accessibility-widget), .main-content title:not(.accessibility-widget), .main-content nav:not(.accessibility-widget), .main-content span:not(.accessibility-widget)'); // Add other selectors if needed
     titleElements.forEach(element => {
       element.style.color = color;
     }); // this code is for all the body   document.body.style.color = color;
