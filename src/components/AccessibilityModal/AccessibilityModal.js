@@ -297,15 +297,35 @@ const AccessibilityModal = ({ show, onHide }) => {
     setIsTextMagnified(!isTextMagnified);
   };
   useEffect(() => {
-    const textElements = document.querySelectorAll('.modal-body *');
-    textElements.forEach(element => {
+    const mainContentElements = document.querySelector('.main-content') ? document.querySelectorAll('.main-content *') : [];
+    mainContentElements.forEach(element => {
       if (isTextMagnified) {
-        element.classList.add('text-magnified', 'magnify'); // Add classes to magnify text
+        element.addEventListener('mouseover', (event) => {
+          event.target.style.transform = 'scale(1.4)';
+          event.target.style.zIndex = 1000;
+          event.target.style.transition = 'transform 0.3s ease';
+        });
+  
+        element.addEventListener('mouseout', (event) => {
+          event.target.style.transform = '';
+          event.target.style.zIndex = 'auto';
+          event.target.style.transition = 'transform 0.3s ease';
+        });
       } else {
-        element.classList.remove('text-magnified', 'magnify'); // Remove classes to return to normal
+        element.removeEventListener('mouseover', (event) => {
+          event.target.style.transform = 'scale(1.2)';
+          event.target.style.zIndex = 1000;
+          event.target.style.transition = 'transform 0.3s ease';
+        });
+        element.removeEventListener('mouseout', (event) => {
+          event.target.style.transform = '';
+          event.target.style.zIndex = 'auto';
+          event.target.style.transition = 'transform 0.3s ease';
+        });
       }
     });
   }, [isTextMagnified]);
+  
 
   /*  This will zookm to 1.2 levelnot needed now */
   // const toggleTextMagnification = () => {
