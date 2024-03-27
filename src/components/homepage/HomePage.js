@@ -15,7 +15,7 @@ import SocialFollow from '../body/SocialFollow';
 
 const body = () => {
   return (
-    <div>
+    <div className='main-content'>
       <Carousel>
       <Carousel.Item interval={1000}>
         <img className='d-block w-100 banner-image' src={amusement} alt='Amusement'/>
