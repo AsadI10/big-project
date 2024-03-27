@@ -226,10 +226,14 @@ const AccessibilityModal = ({ show, onHide }) => {
     setTextAlign(textAlign === 'left' ? 'center' : 'left');
   };
   useEffect(() => {
-    const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p');
-    textElements.forEach(element => {
-      element.style.textAlign = textAlign;
-    });
+    //target elements within the '.main-content' class
+    const mainContent = document.querySelector('.main-content'); // Adjust the class as per your application's structure
+    if (mainContent) {
+      const textElements = mainContent.querySelectorAll('h1, h2, h3, h4, h5, h6, p');
+      textElements.forEach(element => {
+        element.style.textAlign = textAlign;
+      });
+    }
   }, [textAlign]);
 
   //functions for fontsize
